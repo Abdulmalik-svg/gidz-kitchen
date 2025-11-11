@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2 mb-2">
               <img
-                src="/products/WhatsApp Image 2025-11-11 at 02.31.24_09acaae6caf.jpg"
+                src="/products/wp_logo.jpg"
                 alt="S&P Logo"
                 className="w-10 h-10 rounded-full object-cover"
               />

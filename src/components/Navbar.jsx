@@ -28,7 +28,7 @@ export default function Navbar() {
         >
           {/* Logo Image */}
           <img
-            src="/products/WhatsApp Image 2025-11-11 at 02.31.24_09acaae6caf.jpg"
+            src="/products/wp_logo.jpg" // ✅ renamed file without spaces
             alt="Sandwich Club & Peppersoup Logo"
             className="w-12 h-12 rounded-full object-cover"
           />
