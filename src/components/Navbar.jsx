@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // Removed User
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
@@ -24,17 +24,24 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center gap-2 hover:opacity-90 transition"
+          className="flex items-center gap-3 hover:opacity-90 transition"
         >
-          <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center font-bold text-white text-sm">
-            S&P
+          {/* Logo Image */}
+          <img
+            src="/products/WhatsApp Image 2025-11-11 at 02.31.24_09acaae6caf.jpg"
+            alt="Sandwich Club & Peppersoup Logo"
+            className="w-12 h-12 rounded-full object-cover"
+          />
+
+          {/* Logo Text */}
+          <div className="flex flex-col">
+            <span className="text-xl font-bold text-white tracking-tight">
+              Sandwich Club & Peppersoup
+            </span>
+            <span className="text-sm text-orange-400 font-medium">
+              Join The Club, Taste The Difference
+            </span>
           </div>
-          <span className="text-xl font-bold text-white tracking-tight hidden sm:inline">
-            Sandwich Club & Peppersoup
-          </span>
-          <span className="text-xl font-bold text-white tracking-tight sm:hidden">
-            S&P Club
-          </span>
         </Link>
 
         {/* Desktop Nav */}

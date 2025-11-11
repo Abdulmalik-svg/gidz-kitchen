@@ -43,7 +43,7 @@ export default function Home() {
             <a href="#menu" className="bg-orange-600 hover:bg-orange-700 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg font-semibold shadow-md transition-all">
               Browse Menu
             </a>
-            <a href="#contact" className="border-2 border-orange-600 text-orange-400 hover:bg-orange-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg font-semibold transition-all">
+            <a href="/menu" className="border-2 border-orange-600 text-orange-400 hover:bg-orange-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg font-semibold transition-all">
               Order Now
             </a>
           </div>

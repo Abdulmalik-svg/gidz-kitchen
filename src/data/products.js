@@ -57,7 +57,7 @@ const products = [
   {
     id: 7,
     title: "Cat Fish Tail",
-    price: "2000",
+    price: "1500",
     category: "peppersoup",
     image: "/catfish-tail.jpg",
     description: "Fresh catfish tail in aromatic peppersoup",
@@ -65,7 +65,7 @@ const products = [
   {
     id: 8,
     title: "Cat Fish Middle",
-    price: "2500",
+    price: "2000",
     category: "peppersoup",
     image: "/products/catfish.jpg",
     description: "Meaty catfish middle section in spicy broth",
@@ -73,7 +73,7 @@ const products = [
   {
     id: 9,
     title: "Cat Fish Head",
-    price: "4000",
+    price: "2500",
     category: "peppersoup",
     image: "/catfish-head.jpg",
     description: "Premium catfish head peppersoup",
@@ -82,7 +82,7 @@ const products = [
   {
     id: 10,
     title: "Full Cat Fish",
-    price: "8000",
+    price: "4000",
     category: "peppersoup",
     image: "/full-catfish.jpg",
     description: "Complete catfish in our signature peppersoup",

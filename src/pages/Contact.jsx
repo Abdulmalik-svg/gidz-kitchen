@@ -24,10 +24,7 @@ export default function Contact() {
       
       {/* HERO SECTION */}
       <section className="relative min-h-[50vh] flex items-center justify-center px-4 py-20">
-        {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-black to-black"></div>
-        
-        {/* Animated Circles */}
         <div className="absolute top-20 right-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
@@ -67,7 +64,7 @@ export default function Contact() {
               {
                 icon: "📍",
                 title: "Visit Us",
-                line1: "Tarmac, Malete, Kwara State",
+                line1: "Malete Tarmac, Kwara State",
                 line2: "Small kitchen, big flavors"
               }
             ].map((item, i) => (
@@ -175,8 +172,8 @@ export default function Contact() {
               <div className="bg-gradient-to-br from-orange-500/10 to-transparent border border-orange-500/20 rounded-2xl p-2 h-full min-h-[500px]">
                 <div className="relative overflow-hidden rounded-xl h-full">
                   <iframe
-                    title="NaijaFlex Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.9971502523117!2d3.375153974051548!3d6.524379522881691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c4c2ab917f1%3A0x45c54d215c58c05b!2sLagos%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1721052750000!5m2!1sen!2sng"
+                    title="Sandwich Club & Peppersoup - Malete Tarmac"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.841518348484!2d4.470064315161027!3d8.706843995787734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103ae8a6c8c51d6d%3A0x6b3fbb6e28e0280a!2sMalete%20Tarmac%2C%20Kwara%20State%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1728000000000!5m2!1sen!2sng"
                     width="100%"
                     height="100%"
                     className="w-full h-full min-h-[480px] rounded-lg"
@@ -252,13 +249,13 @@ export default function Contact() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:+2348123456789" 
+                href="tel:+2347046057875" 
                 className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105"
               >
                 Call Now
               </a>
               <a 
-                href="#menu" 
+                href="/menu" 
                 className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-full text-lg font-semibold transition"
               >
                 View Menu

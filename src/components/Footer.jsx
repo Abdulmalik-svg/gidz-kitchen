@@ -6,28 +6,23 @@ export default function Footer() {
     <footer className="bg-black border-t border-orange-500/20 text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Logo + Description */}
-          <div className="flex flex-col gap-4">
+          
+          {/* Logo + Motto */}
+          <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2 mb-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center font-bold text-sm">
-                S&P
-              </div>
-              <h2 className="text-xl font-bold">S&P Club</h2>
+              <img
+                src="/products/WhatsApp Image 2025-11-11 at 02.31.24_09acaae6caf.jpg"
+                alt="S&P Logo"
+                className="w-10 h-10 rounded-full object-cover"
+              />
+              <h2 className="text-xl font-bold">Sandwich Club & Peppersoup</h2>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Where flavor meets community. Authentic Nigerian peppersoup, gourmet sandwiches, and good vibes.
+            <p className="text-orange-500 text-sm font-semibold mb-2">
+              Join The Club TasteThe Difference
             </p>
-            <div className="flex gap-3 mt-4">
-              <a href="#" className="w-10 h-10 bg-orange-500/10 hover:bg-orange-500 border border-orange-500/30 hover:border-orange-500 rounded-full flex items-center justify-center transition">
-                <span className="text-sm">📷</span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-orange-500/10 hover:bg-orange-500 border border-orange-500/30 hover:border-orange-500 rounded-full flex items-center justify-center transition">
-                <span className="text-sm">🎵</span>
-              </a>
-              <a href="https://x.com/codexmalik" className="w-10 h-10 bg-orange-500/10 hover:bg-orange-500 border border-orange-500/30 hover:border-orange-500 rounded-full flex items-center justify-center transition">
-                <span className="text-sm">𝕏</span>
-              </a>
-            </div>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Where flavor meets community. Authentic peppersoup, gourmet sandwiches, and good vibes.
+            </p>
           </div>
 
           {/* Quick Links */}
@@ -41,7 +36,10 @@ export default function Footer() {
                 { name: "Contact", to: "/contact" },
               ].map((link, i) => (
                 <li key={i}>
-                  <Link to={link.to} className="text-gray-400 hover:text-orange-500 transition flex items-center gap-2">
+                  <Link
+                    to={link.to}
+                    className="text-gray-400 hover:text-orange-500 transition flex items-center gap-2"
+                  >
                     <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
                     {link.name}
                   </Link>
@@ -56,18 +54,28 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
-                <span>Malete Tarmac,<br />Kwara State University,<br />Ilorin, Kwara State</span>
+                <span>
+                  Malete Tarmac,<br />
+                  Kwara State University,<br />
+                  Ilorin, Kwara State
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                <a href="tel:+2347046057875,+2349132719303" className="hover:text-orange-500 transition">
+                <a
+                  href="tel:+2347046057875,+2349132719303"
+                  className="hover:text-orange-500 transition"
+                >
                   +2347046057875 +2349132719303
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                <a href="mailto:info@spclub.com" className="hover:text-orange-500 transition">
-                  info@spclub.com
+                <a
+                  href="mailto:ibrahimgidado@gmail.com"
+                  className="hover:text-orange-500 transition"
+                >
+                  ibrahimgidado@gmail.com
                 </a>
               </li>
             </ul>
@@ -101,7 +109,7 @@ export default function Footer() {
             <a href="#" className="hover:text-orange-500 transition">Terms of Service</a>
           </div>
         </div>
-        <p className="text-center text-gray-500 text-xs mt-3">Made with ❤️ in Ilorin</p>
+        <p className="text-center text-gray-500 text-xs mt-3">Made with ❤️ in Malete</p>
       </div>
     </footer>
   );
