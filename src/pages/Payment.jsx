@@ -1,16 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 
 export default function Payment() {
   const location = useLocation();
-  const items = location.state?.items || [];
-  const total = location.state?.total || 0;
+  const itemsFromState = location.state?.items || [];
+  const totalFromState = location.state?.total || 0;
 
+  const [items, setItems] = useState(itemsFromState);
+  const [total, setTotal] = useState(totalFromState);
   const [option, setOption] = useState("");
   const [form, setForm] = useState({ name: "", phone: "", address: "" });
 
   const whatsappNumber = "2349132719303";
+
+  // ✅ Detect "Buy Now" from URL query (e.g. ?item=Buffalo%20Chicken&price=3000)
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const item = params.get("item");
+    const price = params.get("price");
+
+    if (item && price) {
+      const singleItem = {
+        title: item,
+        price: Number(price),
+        quantity: 1,
+      };
+      setItems([singleItem]);
+      setTotal(Number(price));
+    }
+  }, [location.search]);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -22,9 +41,9 @@ export default function Payment() {
     if (option === "delivery" && !form.address)
       return toast.error("Enter delivery address");
 
-    const messageItems = items.map(
-      (item) => `${item.quantity} x ${item.title} - ₦${item.price * item.quantity}`
-    ).join("\n");
+    const messageItems = items
+      .map((item) => `${item.quantity} x ${item.title} - ₦${item.price * item.quantity}`)
+      .join("\n");
 
     const message = `
 🛍️ *Sandwich & Peppersoup Club Order*
@@ -54,6 +73,7 @@ Please confirm my order. Thank you! 🍔🍲
           <span className="text-orange-500">Checkout</span>
         </h1>
 
+        {/* PICKUP / DELIVERY TOGGLE */}
         <div className="flex justify-center gap-4 mb-10">
           {["pickup", "delivery"].map((type) => (
             <button
@@ -71,6 +91,7 @@ Please confirm my order. Thank you! 🍔🍲
           ))}
         </div>
 
+        {/* FORM */}
         <form onSubmit={handlePayment} className="space-y-6">
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
@@ -108,26 +129,31 @@ Please confirm my order. Thank you! 🍔🍲
             </div>
           )}
 
+          {/* ORDER SUMMARY */}
           <div>
             <label className="block text-sm mb-1 text-gray-300">Order Summary</label>
             <textarea
-              value={items.map(i => `${i.quantity} x ${i.title} - ₦${i.price * i.quantity}`).join("\n")}
+              value={items
+                .map((i) => `${i.quantity} x ${i.title} - ₦${i.price * i.quantity}`)
+                .join("\n")}
               readOnly
               className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-orange-500"
               rows={items.length + 1}
             />
           </div>
 
+          {/* TOTAL */}
           <div>
             <label className="block text-sm mb-1 text-gray-300">Total Amount</label>
             <input
               type="text"
-              value={total}
+              value={`₦${total.toLocaleString()}`}
               readOnly
               className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-orange-500"
             />
           </div>
 
+          {/* SUBMIT */}
           <button
             type="submit"
             className="w-full bg-orange-500 text-white font-semibold py-3 rounded-lg hover:bg-orange-600 transition text-lg"

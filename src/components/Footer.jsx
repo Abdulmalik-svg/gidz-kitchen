@@ -31,7 +31,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {[
                 { name: "Home", to: "/" },
-                { name: "Menu", to: "/shop" },
+                { name: "Menu", to: "/menu" },
                 { name: "About Us", to: "/about" },
                 { name: "Contact", to: "/contact" },
               ].map((link, i) => (

@@ -1,11 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ Added this
 
 export default function Home() {
+  const navigate = useNavigate(); // ✅ Added this
+
   const featuredProducts = [
-    { title: "Buffalo Chicken Sandwich", price: "3,000", image: "/buffalo-01.jpg", tag: "Spicy" },
-    { title: "Cat Fish Peppersoup", price: "4,000", image: "/products/catfish.jpg", tag: "Bestseller" },
-    { title: "Loaded Fries", price: "5,000", image: "/products/loaded-fries.jpg", tag: "Popular" }
+    { title: "Buffalo Chicken Sandwich", price: 3000, image: "/buffalo-01.jpg", tag: "Spicy" },
+    { title: "Cat Fish Peppersoup", price: 4000, image: "/products/catfish.jpg", tag: "Bestseller" },
+    { title: "Loaded Fries", price: 5000, image: "/products/loaded-fries.jpg", tag: "Popular" }
   ];
 
   const categories = [
@@ -40,10 +43,16 @@ export default function Home() {
             Authentic peppersoup, gourmet sandwiches, and vibes that feel like home.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#menu" className="bg-orange-600 hover:bg-orange-700 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg font-semibold shadow-md transition-all">
+            <a
+              href="#menu"
+              className="bg-orange-600 hover:bg-orange-700 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg font-semibold shadow-md transition-all"
+            >
               Browse Menu
             </a>
-            <a href="/menu" className="border-2 border-orange-600 text-orange-400 hover:bg-orange-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg font-semibold transition-all">
+            <a
+              href="/menu"
+              className="border-2 border-orange-600 text-orange-400 hover:bg-orange-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg font-semibold transition-all"
+            >
               Order Now
             </a>
           </div>
@@ -83,7 +92,9 @@ export default function Home() {
           >
             Customer Favorites
           </motion.h2>
-          <p className="text-gray-400 mb-8 sm:mb-12 text-sm sm:text-base">Our most-ordered dishes everyone is raving about</p>
+          <p className="text-gray-400 mb-8 sm:mb-12 text-sm sm:text-base">
+            Our most-ordered dishes everyone is raving about
+          </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {featuredProducts.map((product, index) => (
@@ -107,12 +118,25 @@ export default function Home() {
                 </div>
                 <div className="p-4 sm:p-5 flex flex-col gap-2 sm:gap-3">
                   <h3 className="text-lg sm:text-xl font-semibold">{product.title}</h3>
-                  <span className="text-orange-500 font-bold text-lg sm:text-xl">₦{product.price}</span>
+                  <span className="text-orange-500 font-bold text-lg sm:text-xl">₦{product.price.toLocaleString()}</span>
+
+                  {/* ✅ Updated Buy Now Button */}
                   <button
                     onClick={() =>
-                      window.location.href = `/payment?item=${encodeURIComponent(product.title)}&price=${product.price}`
+                      navigate("/payment", {
+                        state: {
+                          items: [
+                            {
+                              title: product.title,
+                              price: product.price,
+                              quantity: 1,
+                            },
+                          ],
+                          total: product.price,
+                        },
+                      })
                     }
-                    className="bg-orange-600 hover:bg-orange-700 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm sm:text-sm font-bold transition-all"
+                    className="bg-orange-600 hover:bg-orange-700 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm font-bold transition-all"
                   >
                     Buy Now
                   </button>
@@ -126,7 +150,9 @@ export default function Home() {
       {/* WHY CHOOSE US */}
       <section className="py-12 sm:py-16 bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 sm:mb-8 text-orange-500">Why Join The Club?</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 sm:mb-8 text-orange-500">
+            Why Join The Club?
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {[
               { icon: "⚡", title: "Fast Delivery", desc: "Hot meals at your door in 30 minutes or less." },
@@ -161,7 +187,10 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <h3 className="text-4xl sm:text-5xl font-extrabold mb-2">{s.value}{s.suffix}</h3>
+              <h3 className="text-4xl sm:text-5xl font-extrabold mb-2">
+                {s.value}
+                {s.suffix}
+              </h3>
               <p className="text-orange-50 font-semibold text-sm sm:text-base">{s.label}</p>
             </motion.div>
           ))}
@@ -171,8 +200,12 @@ export default function Home() {
       {/* CONTACT / NEWSLETTER */}
       <section id="contact" className="py-12 sm:py-16 bg-black text-center">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 sm:mb-6 text-orange-500">Join The Club</h2>
-          <p className="text-gray-400 mb-6 sm:mb-8 text-sm sm:text-base">Get exclusive deals and first access to new menu drops</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 sm:mb-6 text-orange-500">
+            Join The Club
+          </h2>
+          <p className="text-gray-400 mb-6 sm:mb-8 text-sm sm:text-base">
+            Get exclusive deals and first access to new menu drops
+          </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <input
               type="email"
