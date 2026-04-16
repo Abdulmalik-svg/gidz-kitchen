@@ -28,7 +28,7 @@ export default function Navbar() {
         >
           {/* Logo Image */}
           <img
-            src="/products/wp_logo.jpg" // ✅ renamed file without spaces
+            src="/products/logo.jpeg" // ✅ renamed file without spaces
             alt="Sandwich Club & Peppersoup Logo"
             className="w-12 h-12 rounded-full object-cover"
           />
@@ -39,7 +39,7 @@ export default function Navbar() {
               GID'S KITHCHEN
             </span>
             <span className="text-sm text-orange-400 font-medium">
-            Sandwich Club & Peppersoup <br />
+            Sandwich & Peppersoup <br />
               Join The Club, Taste The Difference
             </span>
           </div>
