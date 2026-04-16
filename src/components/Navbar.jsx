@@ -36,9 +36,10 @@ export default function Navbar() {
           {/* Logo Text */}
           <div className="flex flex-col">
             <span className="text-xl font-bold text-white tracking-tight">
-              Sandwich Club & Peppersoup
+              GID'S KITHCHEN
             </span>
             <span className="text-sm text-orange-400 font-medium">
+            Sandwich Club & Peppersoup <br />
               Join The Club, Taste The Difference
             </span>
           </div>
