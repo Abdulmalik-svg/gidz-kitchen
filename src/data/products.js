@@ -7,6 +7,7 @@ const products = [
     category: "sandwiches",
     image: "/chicken-chips.jpg",
     description: "Crispy fried chicken served with golden fries",
+    tag: "Popular",
   },
   {
     id: 2,
@@ -33,21 +34,39 @@ const products = [
     description: "Spicy buffalo chicken with crispy veggies",
     tag: "Spicy",
   },
-
-  // 🍟 Sides
   {
     id: 5,
+    title: "Cheese Steak",
+    price: "3500",
+    category: "sandwiches",
+    image: "/products/steak.jpg",
+    description: "Juicy steak sandwich loaded with melted cheese",
+    tag: "New",
+  },
+  {
+    id: 6,
+    title: "Shawarma",
+    price: "3000",
+    category: "sandwiches",
+    image: "/products/shawarma.jpg",
+    description: "Creamy shawarma wrapped with fresh vegetables",
+    tag: "Hot",
+  },
+
+  // 🍚 Rice & Sides
+  {
+    id: 7,
     title: "Loaded Fries",
     price: "5000",
     category: "sides",
     image: "/products/loaded-fries.jpg",
-    description: "Crispy fries loaded with toppings",
+    description: "Crispy fries loaded with tasty toppings",
     tag: "Popular",
   },
 
   // 🌶️ Peppersoup
   {
-    id: 6,
+    id: 8,
     title: "Chicken Pepper Soup",
     price: "3000",
     category: "peppersoup",
@@ -55,7 +74,16 @@ const products = [
     description: "Traditional Nigerian peppersoup with tender chicken",
   },
   {
-    id: 7,
+    id: 9,
+    title: "Turkey Pepper Soup",
+    price: "4000",
+    category: "peppersoup",
+    image: "/products/turkey.jpg",
+    description: "Rich and spicy turkey peppersoup made with local spices",
+    tag: "Hot",
+  },
+  {
+    id: 10,
     title: "Cat Fish Tail",
     price: "1500",
     category: "peppersoup",
@@ -63,15 +91,15 @@ const products = [
     description: "Fresh catfish tail in aromatic peppersoup",
   },
   {
-    id: 8,
+    id: 11,
     title: "Cat Fish Middle",
     price: "2000",
     category: "peppersoup",
-    image: "/products/catfish.jpg",
+    image: "/products/middle cat.jpg",
     description: "Meaty catfish middle section in spicy broth",
   },
   {
-    id: 9,
+    id: 12,
     title: "Cat Fish Head",
     price: "2500",
     category: "peppersoup",
@@ -80,7 +108,7 @@ const products = [
     tag: "Bestseller",
   },
   {
-    id: 10,
+    id: 13,
     title: "Full Cat Fish",
     price: "4000",
     category: "peppersoup",
