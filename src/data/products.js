@@ -20,7 +20,7 @@ const products = [
   {
     id: 3,
     title: "Bread with Egg Sauce",
-    price: "1200",
+    price: "1500",
     category: "sandwiches",
     image: "/egg-sauce.jpg",
     description: "Fresh bread with delicious egg sauce",
@@ -110,7 +110,7 @@ const products = [
   {
     id: 13,
     title: "Full Cat Fish",
-    price: "4000",
+    price: "5000",
     category: "peppersoup",
     image: "/full-catfish.jpg",
     description: "Complete catfish in our signature peppersoup",
